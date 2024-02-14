@@ -14,7 +14,7 @@ func _process(delta):
 		
 func _physics_process(delta):
 	#操作からvelocityに反映
-	velocity = Input.get_vector("left","right","up","down")
+	velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	
 	#斜め速度を補正
 	if velocity.length() > 0:
