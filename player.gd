@@ -29,7 +29,7 @@ func _physics_process(delta):
 	#なんかすごいやつ
 	move_and_slide()
 	
-func vecint(_velocity:Vector2):
+func vecint(_velocity:Vector2): #インプットの座標を変更
 	print($Area2D/interact.transform.origin)
 	if _velocity.y < 0 and _velocity.x == 0: 
 		$Area2D/interact.transform.origin = Vector2(0,-9)
