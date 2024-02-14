@@ -29,16 +29,18 @@ func _physics_process(delta):
 	#なんかすごいやつ
 	move_and_slide()
 	
+	#
+	print($RayCast2D.get_collider())
+	
 func vecint(_velocity:Vector2): #インプットの座標を変更
-	print($Area2D/interact.transform.origin)
 	if _velocity.y < 0 and _velocity.x == 0: 
-		$Area2D/interact.transform.origin = Vector2(0,-9)
+		$RayCast2D.target_position = Vector2(0,-10)
 	if _velocity.y > 0 and _velocity.x == 0:
-		$Area2D/interact.transform.origin = Vector2(0,10)
+		$RayCast2D.target_position = Vector2(0,10)
 	if _velocity.x < 0:
-		$Area2D/interact.transform.origin = Vector2(-7,0)
+		$RayCast2D.target_position = Vector2(-7,0)
 	if _velocity.x > 0:
-		$Area2D/interact.transform.origin = Vector2(7,0)
+		$RayCast2D.target_position = Vector2(7,0)
 	
 func vecani(_velocity: Vector2):#アニメーション向き制御
 	if _velocity.y < 0 and _velocity.x == 0: 
@@ -50,7 +52,7 @@ func vecani(_velocity: Vector2):#アニメーション向き制御
 	if _velocity.x > 0:
 		$chara_texture/AnimationPlayer.play("right")
 	
-	
+
 	
 	
 	
