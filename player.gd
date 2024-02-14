@@ -1,17 +1,17 @@
 extends CharacterBody2D
 
+const speed: int = 64
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$chara_texture/AnimationPlayer.play("down")
 
-
-const speed: int = 64
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-		
+
+
 func _physics_process(delta):
 	#操作からvelocityに反映
 	velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
@@ -42,13 +42,13 @@ func vecint(_velocity:Vector2): #インプットの座標を変更
 	
 func vecani(_velocity: Vector2):#アニメーション向き制御
 	if _velocity.y < 0 and _velocity.x == 0: 
-		$Sprite2D/AnimationPlayer.play("up")
+		$chara_texture/AnimationPlayer.play("up")
 	if _velocity.y > 0 and _velocity.x == 0:
-		$Sprite2D/AnimationPlayer.play("down")
+		$chara_texture/AnimationPlayer.play("down")
 	if _velocity.x < 0:
-		$Sprite2D/AnimationPlayer.play("left")
+		$chara_texture/AnimationPlayer.play("left")
 	if _velocity.x > 0:
-		$Sprite2D/AnimationPlayer.play("right")
+		$chara_texture/AnimationPlayer.play("right")
 	
 	
 	
