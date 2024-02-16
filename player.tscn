@@ -7,6 +7,7 @@
 size = Vector2(10, 15)
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_rghen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,9 +16,6 @@ shape = SubResource("RectangleShape2D_i3f6q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(10, 0)
 
 [node name="chara_texture" parent="." instance=ExtResource("2_bq0up")]
 frame = 4
