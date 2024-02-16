@@ -22,25 +22,12 @@ func _physics_process(delta):
 		
 	#スピードを乗算
 	velocity *= speed
+	
 	#アニメーション向き制御
 	vecani(velocity)
-	#interact位置制御
-	vecint(velocity)
+
 	#なんかすごいやつ
 	move_and_slide()
-	
-	#
-	print($RayCast2D.get_collider())
-	
-func vecint(_velocity:Vector2): #インプットの座標を変更
-	if _velocity.y < 0 and _velocity.x == 0: 
-		$RayCast2D.target_position = Vector2(0,-10)
-	if _velocity.y > 0 and _velocity.x == 0:
-		$RayCast2D.target_position = Vector2(0,10)
-	if _velocity.x < 0:
-		$RayCast2D.target_position = Vector2(-7,0)
-	if _velocity.x > 0:
-		$RayCast2D.target_position = Vector2(7,0)
 	
 func vecani(_velocity: Vector2):#アニメーション向き制御
 	if _velocity.y < 0 and _velocity.x == 0: 
