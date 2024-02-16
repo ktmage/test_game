@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://myb7bgcn88s6"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://myb7bgcn88s6"]
 
 [ext_resource type="Texture2D" uid="uid://bmeg4vnl2cylt" path="res://src/tile_map_1_1.png" id="1_xu281"]
 [ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://src/tile_map_2_1.png" id="2_pmq24"]
 [ext_resource type="PackedScene" uid="uid://drvbuysfup248" path="res://tile_collision.tscn" id="3_423j8"]
+[ext_resource type="PackedScene" uid="uid://dk0rifobek3ie" path="res://signboard.tscn" id="4_on6kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4bs86"]
 texture = ExtResource("1_xu281")
@@ -63,8 +64,12 @@ texture = ExtResource("2_pmq24")
 resource_name = "tilecollisions"
 scenes/1/scene = ExtResource("3_423j8")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_shjsb"]
+scenes/1/scene = ExtResource("4_on6kf")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4bs86")
 sources/1 = SubResource("TileSetAtlasSource_f6mdy")
 sources/2 = SubResource("TileSetScenesCollectionSource_86cpe")
+sources/3 = SubResource("TileSetScenesCollectionSource_shjsb")
