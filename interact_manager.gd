@@ -2,8 +2,6 @@ extends Node
 
 @onready var player = get_tree().get_first_node_in_group("player")
 
-const base_text = "[E] to "
-
 var active_areas = []
 var can_interact = true
 
