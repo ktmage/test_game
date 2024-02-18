@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dp0etike2pqgs"]
 
-[ext_resource type="TileSet" uid="uid://myb7bgcn88s6" path="res://src/test_tile_set.tres" id="1_tn81f"]
+[ext_resource type="TileSet" uid="uid://myb7bgcn88s6" path="res://map/test_tile_set.tres" id="1_tn81f"]
 
 [node name="test_map" type="TileMap"]
 scale = Vector2(1, 0.99832)

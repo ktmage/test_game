@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://myb7bgcn88s6"]
 
-[ext_resource type="Texture2D" uid="uid://bmeg4vnl2cylt" path="res://src/tile_map_1_1.png" id="1_xu281"]
-[ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://src/tile_map_2_1.png" id="2_pmq24"]
+[ext_resource type="Texture2D" uid="uid://bmeg4vnl2cylt" path="res://map/tile_map_1_1.png" id="1_xu281"]
+[ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://map/tile_map_2_1.png" id="2_pmq24"]
 [ext_resource type="PackedScene" uid="uid://drvbuysfup248" path="res://map/tile_collision.tscn" id="3_423j8"]
 [ext_resource type="PackedScene" uid="uid://dk0rifobek3ie" path="res://entity/interactive_object/signboard/signboard.tscn" id="4_on6kf"]
 

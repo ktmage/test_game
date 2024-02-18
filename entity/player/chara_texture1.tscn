@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cjktn4bhs12by"]
 
-[ext_resource type="Texture2D" uid="uid://csr2hgv4aqkqh" path="res://src/test_chara1.png" id="1_kt6hs"]
+[ext_resource type="Texture2D" uid="uid://csr2hgv4aqkqh" path="res://entity/player/test_chara1.png" id="1_kt6hs"]
 
 [sub_resource type="Animation" id="Animation_wt6wo"]
 resource_name = "action_down"
