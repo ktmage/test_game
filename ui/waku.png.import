@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccstxa5j7354w"
-path="res://.godot/imported/waku.png-f2f1d9d3bd12783f2af06698c87595e7.ctex"
+path="res://.godot/imported/waku.png-08911f80073362560954ea91297d36c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/waku.png"
-dest_files=["res://.godot/imported/waku.png-f2f1d9d3bd12783f2af06698c87595e7.ctex"]
+source_file="res://ui/waku.png"
+dest_files=["res://.godot/imported/waku.png-08911f80073362560954ea91297d36c8.ctex"]
 
 [params]
 

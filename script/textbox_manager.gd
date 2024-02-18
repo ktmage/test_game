@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const FRAME = preload("res://frame/frame1.tscn")
+const FRAME = preload("res://ui/frame/frame1.tscn")
 var screen_size #画面サイズを取ってくる
 var scale_size: int #カメラの倍率
 
