@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://l3suecgu468x"]
 
-[ext_resource type="PackedScene" uid="uid://dp0etike2pqgs" path="res://test_map.tscn" id="1_6hrxc"]
-[ext_resource type="PackedScene" uid="uid://c7to6cf114d1x" path="res://player.tscn" id="2_xl6nu"]
-[ext_resource type="PackedScene" uid="uid://brwmhv81kd6qq" path="res://textbox_manager.tscn" id="3_ldgew"]
+[ext_resource type="PackedScene" uid="uid://dp0etike2pqgs" path="res://map/test_map/test_map.tscn" id="1_6hrxc"]
+[ext_resource type="PackedScene" uid="uid://c7to6cf114d1x" path="res://entity/player/player.tscn" id="2_xl6nu"]
+[ext_resource type="PackedScene" uid="uid://d3ddpmlhpefuh" path="res://script/textbox_manager.tscn" id="3_ldgew"]
 
 [sub_resource type="GDScript" id="GDScript_54pf3"]
 script/source = "extends Node2D

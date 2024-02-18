@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://drvbuysfup248"]
 
-[ext_resource type="Script" path="res://tile_collision.gd" id="1_3rxru"]
+[ext_resource type="Script" path="res://map/tile_collision.gd" id="1_3rxru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8huu"]
 size = Vector2(16, 16)
