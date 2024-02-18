@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dk0rifobek3ie"]
 
-[ext_resource type="Script" path="res://signboard.gd" id="1_x8lt8"]
-[ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://src/tile_map_2_1.png" id="2_xb16f"]
-[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://interaction_area.tscn" id="3_6lrid"]
+[ext_resource type="Script" path="res://entity/interactive_object/signboard/signboard.gd" id="1_m3vut"]
+[ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://src/tile_map_2_1.png" id="2_3de00"]
+[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://entity/interactive_object/interaction_area.tscn" id="3_kw2li"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gduh4"]
 size = Vector2(16, 16)
@@ -11,10 +11,10 @@ size = Vector2(16, 16)
 radius = 20.0
 
 [node name="Signboard" type="StaticBody2D" groups=["InteractiveObject"]]
-script = ExtResource("1_x8lt8")
+script = ExtResource("1_m3vut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xb16f")
+texture = ExtResource("2_3de00")
 hframes = 4
 vframes = 2
 frame = 5
@@ -23,7 +23,7 @@ frame = 5
 visible = false
 shape = SubResource("RectangleShape2D_gduh4")
 
-[node name="InteractionArea" parent="." instance=ExtResource("3_6lrid")]
+[node name="InteractionArea" parent="." instance=ExtResource("3_kw2li")]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

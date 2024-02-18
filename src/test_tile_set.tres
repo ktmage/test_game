@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bmeg4vnl2cylt" path="res://src/tile_map_1_1.png" id="1_xu281"]
 [ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://src/tile_map_2_1.png" id="2_pmq24"]
-[ext_resource type="PackedScene" uid="uid://drvbuysfup248" path="res://tile_collision.tscn" id="3_423j8"]
-[ext_resource type="PackedScene" uid="uid://dk0rifobek3ie" path="res://signboard.tscn" id="4_on6kf"]
+[ext_resource type="PackedScene" uid="uid://drvbuysfup248" path="res://map/tile_collision.tscn" id="3_423j8"]
+[ext_resource type="PackedScene" uid="uid://dk0rifobek3ie" path="res://entity/interactive_object/signboard/signboard.tscn" id="4_on6kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4bs86"]
 texture = ExtResource("1_xu281")
