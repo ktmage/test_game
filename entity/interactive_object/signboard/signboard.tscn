@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dk0rifobek3ie"]
 
-[ext_resource type="Script" path="res://entity/signboard/signboard.gd" id="1_m3vut"]
+[ext_resource type="Script" path="res://entity/interactive_object/signboard/signboard.gd" id="1_m3vut"]
 [ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://src/tile_map_2_1.png" id="2_3de00"]
-[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://entity/interaction_area.tscn" id="3_kw2li"]
+[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://entity/interactive_object/interaction_area.tscn" id="3_kw2li"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gduh4"]
 size = Vector2(16, 16)
