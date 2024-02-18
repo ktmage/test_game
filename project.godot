@@ -18,6 +18,7 @@ config/icon="res://src/icon.svg"
 [autoload]
 
 InteractManager="*res://interact_manager.gd"
+TextboxManager="*res://textbox_manager.gd"
 
 [display]
 

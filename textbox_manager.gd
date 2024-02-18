@@ -10,7 +10,7 @@ var scale_size: int #カメラの倍率
 func _ready():
 	screen_size = get_viewport().size
 	scale_size = 3
-	main_textbox("text_textaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+	#main_textbox("")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
