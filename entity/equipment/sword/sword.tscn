@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cech3eijll3jv"]
+[gd_scene load_steps=4 format=3 uid="uid://cfyeg0qhupgj2"]
 
 [ext_resource type="PackedScene" uid="uid://deyfr0aersr5i" path="res://entity/equipment/equipment.tscn" id="1_30gm4"]
 [ext_resource type="Script" path="res://entity/equipment/sword/sword.gd" id="2_786gf"]
@@ -7,8 +7,14 @@
 [node name="Sword" instance=ExtResource("1_30gm4")]
 texture = ExtResource("2_mbtkh")
 script = ExtResource("2_786gf")
-attack = 5
 grip_pos_up = Vector2(4.5, -1)
 grip_pos_down = Vector2(-4.5, -1)
 grip_pos_left = Vector2(-1.5, -1)
 grip_pos_right = Vector2(1.5, -1)
+action_pos_up = Vector2(4.5, -4)
+action_pos_down = Vector2(-4.5, 6)
+action_ang_down = 180
+action_pos_left = Vector2(-8, 1.5)
+action_ang_left = 270
+action_pos_right = Vector2(8, 1.5)
+action_ang_right = 90

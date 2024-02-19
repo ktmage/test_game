@@ -1,4 +1,5 @@
-extends Sprite2D
+extends Node2D
+
 
 @export_category("status")
 @export var attack: int
@@ -26,7 +27,7 @@ extends Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print("ready!!!!!!!!!!!!!")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,42 +35,45 @@ func _process(delta):
 	pass
 
 	
-func grip_control(vec: String):
-	if vec == "up":
+func grip_control(_chara_vector:int):
+	if _chara_vector == 0:
 		position = Vector2(grip_pos_up)
-		rotation = grip_ang_up
+		rotation = deg_to_rad(grip_ang_up)
 		z_index = 1
-	if vec == "down":
+	if _chara_vector == 1:
 		position = Vector2(grip_pos_down)
-		rotation = grip_ang_down
+		rotation = deg_to_rad(grip_ang_down)
 		z_index = 2
-	if vec == "left":
+	if _chara_vector == 2:
 		position = Vector2(grip_pos_left)
-		rotation = grip_ang_left
+		rotation = deg_to_rad(grip_ang_left)
 		z_index = 1
-	if vec == "right":
+	if _chara_vector == 3:
 		position = Vector2(grip_pos_right)
-		rotation = grip_ang_right
+		rotation = deg_to_rad(grip_ang_right)
 		z_index = 2
 	else:
 		pass
 	
-func action_control(vec: String):
-	if vec == "up":
+func action_control(_chara_vector: int):
+	if _chara_vector == 0:
 		position = Vector2(action_pos_up)
-		rotation = action_ang_up
+		rotation = deg_to_rad(action_ang_up)
 		z_index = 1
-	if vec == "down":
+	if _chara_vector == 1:
 		position = Vector2(action_pos_down)
-		rotation = action_ang_down
+		rotation = deg_to_rad(action_ang_down)
 		z_index = 2
-	if vec == "left":
+	if _chara_vector == 2:
 		position = Vector2(action_pos_left)
-		rotation = action_ang_left
+		rotation = deg_to_rad(action_ang_left)
 		z_index = 1
-	if vec == "right":
+	if _chara_vector == 3:
 		position = Vector2(action_pos_right)
-		rotation = action_ang_right
+		rotation = deg_to_rad(action_ang_right)
 		z_index = 2
 	else:
 		pass
+
+
+

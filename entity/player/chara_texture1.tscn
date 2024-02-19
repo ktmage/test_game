@@ -5,6 +5,7 @@
 [sub_resource type="Animation" id="Animation_wt6wo"]
 resource_name = "action_down"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -144,7 +145,7 @@ _data = {
 texture = ExtResource("1_kt6hs")
 hframes = 4
 vframes = 4
-frame = 12
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
