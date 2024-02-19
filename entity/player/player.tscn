@@ -18,4 +18,5 @@ shape = SubResource("RectangleShape2D_i3f6q")
 zoom = Vector2(3, 3)
 
 [node name="chara_texture" parent="." instance=ExtResource("2_bq0up")]
-frame = 4
+z_index = 2
+frame = 0
