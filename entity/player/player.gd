@@ -5,7 +5,7 @@ const SWORD = preload("res://entity/equipment/sword/sword.tscn")
 const speed: int = 64
 var equipment: Node2D
 var chara_vector : int #キャラの向きを0~3で記憶(上下左右)
-var chara_condition :String
+var chara_condition :String #キャラの状態を記憶
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,22 +41,23 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func vector_ctrl(_velocity):
-	if _velocity.y < 0 and _velocity.x == 0: 
-		chara_vector = 0
-		chara_condition = "moving"
-	if _velocity.y > 0 and _velocity.x == 0:
-		chara_vector = 1
-		chara_condition = "moving"
-	if _velocity.x < 0:
-		chara_vector = 2
-		chara_condition = "moving"
-	if _velocity.x > 0:
-		chara_vector = 3
-		chara_condition = "moving"
-	
-	if _velocity.x == 0 and _velocity.y == 0:
-		if chara_condition == "moving":
+	if chara_condition != "action":
+		if _velocity.y < 0 and _velocity.x == 0: 
+			chara_vector = 0
+			chara_condition = "moving"
+		if _velocity.y > 0 and _velocity.x == 0:
+			chara_vector = 1
+			chara_condition = "moving"
+		if _velocity.x < 0:
+			chara_vector = 2
+			chara_condition = "moving"
+		if _velocity.x > 0:
+			chara_vector = 3
+			chara_condition = "moving"
+		if _velocity.x == 0 and _velocity.y == 0:
 			chara_condition = "idle"
+		else:
+			pass
 	
 func move_anim(_chara_vector: int, _chara_condition: String):#アニメーション向き制御
 	if _chara_condition == "moving":
@@ -106,17 +107,19 @@ func equip_contorol(_chara_condition: String, _chara_vector: int):#向きに応�
 		if  _chara_condition == "idle" or _chara_condition == "moving":
 			equipment.grip_control(_chara_vector)
 	
-func attack():#武器を使う(?)
+func action():#武器を使う(?)
 	if equipment == null:
 		pass
 	else:
 		chara_condition = "action"
 		equipment.action_control(chara_vector)
+		var timer = get_tree().create_timer(0.5)
+		timer.connect("timeout", func(): chara_condition = "idle")
 
 func _input(event):
 	if event.is_action_pressed("interact"):
 		print("F")
-		attack()
+		action()
 
 
 
