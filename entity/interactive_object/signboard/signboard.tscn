@@ -1,30 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk0rifobek3ie"]
+[gd_scene load_steps=8 format=3 uid="uid://dk0rifobek3ie"]
 
 [ext_resource type="Script" path="res://entity/interactive_object/signboard/signboard.gd" id="1_m3vut"]
 [ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://map/tile_map_2_1.png" id="2_3de00"]
-[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://entity/interactive_object/interaction_area.tscn" id="3_kw2li"]
+[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://component/com_interactable/com_interactable.tscn" id="3_kw2li"]
+[ext_resource type="PackedScene" uid="uid://c6bx00phxjrgr" path="res://component/com_selectable/com_selectable.tscn" id="3_mn51y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gduh4"]
 size = Vector2(16, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b47kx"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpqat"]
 radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jjvf"]
+size = Vector2(12, 13)
 
 [node name="Signboard" type="StaticBody2D" groups=["InteractiveObject"]]
 script = ExtResource("1_m3vut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_3de00")
-hframes = 4
-vframes = 2
-frame = 5
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_gduh4")
 
-[node name="InteractionArea" parent="." instance=ExtResource("3_kw2li")]
-visible = false
+[node name="com_interactable" parent="." node_paths=PackedStringArray("com_selectable") instance=ExtResource("3_kw2li")]
+com_selectable = NodePath("../com_selectable")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("CircleShape2D_b47kx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="com_interactable"]
+shape = SubResource("CircleShape2D_bpqat")
+
+[node name="com_selectable" parent="." node_paths=PackedStringArray("sprite_2d") instance=ExtResource("3_mn51y")]
+sprite_2d = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="com_selectable"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_2jjvf")
+
+[connection signal="interacted" from="com_interactable" to="." method="_on_com_interactable_interacted"]
