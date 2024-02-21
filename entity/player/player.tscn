@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7to6cf114d1x"]
+[gd_scene load_steps=5 format=3 uid="uid://c7to6cf114d1x"]
 
 [ext_resource type="Script" path="res://entity/player/player.gd" id="1_rghen"]
 [ext_resource type="PackedScene" uid="uid://cjktn4bhs12by" path="res://entity/player/chara_texture1.tscn" id="2_bq0up"]
+[ext_resource type="Script" path="res://component/com_status/com_status.gd" id="3_k78bq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3f6q"]
 size = Vector2(10, 15)
@@ -20,3 +21,6 @@ zoom = Vector2(3, 3)
 [node name="chara_texture" parent="." instance=ExtResource("2_bq0up")]
 z_index = 2
 frame = 0
+
+[node name="com_status" type="Node" parent="."]
+script = ExtResource("3_k78bq")
