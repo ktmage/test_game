@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://entity/interactive_object/signboard/signboard.gd" id="1_m3vut"]
 [ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://map/tile_map_2_1.png" id="2_3de00"]
-[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://component/com_interactable/com_interactable.tscn" id="3_kw2li"]
-[ext_resource type="PackedScene" uid="uid://c6bx00phxjrgr" path="res://component/com_selectable/com_selectable.tscn" id="3_mn51y"]
+[ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://component/com_interact_area/com_interact_area.tscn" id="3_kw2li"]
+[ext_resource type="PackedScene" uid="uid://c6bx00phxjrgr" path="res://component/com_select_area/com_select_area.tscn" id="3_mn51y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gduh4"]
 size = Vector2(16, 16)

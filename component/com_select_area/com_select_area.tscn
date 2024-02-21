@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6bx00phxjrgr"]
 
-[ext_resource type="Script" path="res://component/com_selectable/com_selectable.gd" id="1_qbr3j"]
+[ext_resource type="Script" path="res://component/com_select_area/com_select_area.gd" id="1_qbr3j"]
 
 [node name="com_selectable" type="Area2D"]
 script = ExtResource("1_qbr3j")
