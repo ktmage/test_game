@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://00yy528sfkwl"]
+
+[ext_resource type="Script" path="res://component/com_enemy_move_ai/com_enemy_move_ai.gd" id="1_jtx0h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vtxt"]
+
+[node name="com_enemy_move_ai" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_jtx0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0vtxt")
+
+[node name="rays" type="Node2D" parent="."]
+
+[node name="0" type="RayCast2D" parent="rays"]
+rotation = 3.14159
+target_position = Vector2(0, 4)
+
+[node name="1" type="RayCast2D" parent="rays"]
+rotation = -2.3562
+target_position = Vector2(0, 4)
+
+[node name="2" type="RayCast2D" parent="rays"]
+rotation = -1.5708
+target_position = Vector2(0, 4)
+
+[node name="3" type="RayCast2D" parent="rays"]
+rotation = -0.785395
+target_position = Vector2(0, 4)
+
+[node name="4" type="RayCast2D" parent="rays"]
+target_position = Vector2(0, 4)
+
+[node name="5" type="RayCast2D" parent="rays"]
+rotation = 0.785398
+target_position = Vector2(0, 4)
+
+[node name="6" type="RayCast2D" parent="rays"]
+rotation = 1.5708
+target_position = Vector2(0, 4)
+
+[node name="7" type="RayCast2D" parent="rays"]
+rotation = 2.35619
+target_position = Vector2(0, 4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
