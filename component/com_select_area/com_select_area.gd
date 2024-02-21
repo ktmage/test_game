@@ -7,7 +7,7 @@ var _material: ShaderMaterial;
 
 func _init():
 	_material = ShaderMaterial.new()
-	_material.shader = load("res://component/com_selectable/highlight.gdshader")
+	_material.shader = load("res://component/com_select_area/highlight.gdshader")
 
 func _ready():
 	if sprite_2d != null:

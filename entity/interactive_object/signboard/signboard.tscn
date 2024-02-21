@@ -25,17 +25,17 @@ region_rect = Rect2(16, 16, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gduh4")
 
-[node name="com_interactable" parent="." node_paths=PackedStringArray("com_selectable") instance=ExtResource("3_kw2li")]
-com_selectable = NodePath("../com_selectable")
+[node name="com_interact_area" parent="." node_paths=PackedStringArray("com_selectable") instance=ExtResource("3_kw2li")]
+com_selectable = NodePath("../com_select_area")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="com_interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="com_interact_area"]
 shape = SubResource("CircleShape2D_bpqat")
 
-[node name="com_selectable" parent="." node_paths=PackedStringArray("sprite_2d") instance=ExtResource("3_mn51y")]
+[node name="com_select_area" parent="." node_paths=PackedStringArray("sprite_2d") instance=ExtResource("3_mn51y")]
 sprite_2d = NodePath("../Sprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="com_selectable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="com_select_area"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2jjvf")
 
-[connection signal="interacted" from="com_interactable" to="." method="_on_com_interactable_interacted"]
+[connection signal="interacted" from="com_interact_area" to="." method="_on_com_interactable_interacted"]
