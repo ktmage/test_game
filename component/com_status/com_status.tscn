@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2pbe3cc1cvhm"]
+
+[ext_resource type="Script" path="res://component/com_status/com_status.gd" id="1_xwolw"]
+
+[node name="com_status" type="Node"]
+script = ExtResource("1_xwolw")
