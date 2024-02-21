@@ -36,7 +36,7 @@ script = SubResource("GDScript_54pf3")
 position = Vector2(253, 388)
 
 [node name="Slime" parent="." instance=ExtResource("4_6do46")]
-position = Vector2(221, 389)
+position = Vector2(248, 358)
 
 [node name="Slime2" parent="." instance=ExtResource("4_6do46")]
 position = Vector2(301, 410)

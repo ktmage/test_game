@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://70pitppp32an"]
+[gd_scene load_steps=7 format=3 uid="uid://70pitppp32an"]
 
 [ext_resource type="Script" path="res://entity/enemy/slime/slime.gd" id="1_xsqbi"]
 [ext_resource type="Texture2D" uid="uid://7i52p4kr6cjd" path="res://entity/enemy/slime/slime.png" id="2_o3cym"]
+[ext_resource type="PackedScene" uid="uid://00yy528sfkwl" path="res://component/com_enemy_move_ai/com_enemy_move_ai.tscn" id="3_4dav0"]
 
 [sub_resource type="Animation" id="Animation_hmqh3"]
 resource_name = "idle"
@@ -42,3 +43,8 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_dunem")
+
+[node name="com_enemy_move_ai" parent="." instance=ExtResource("3_4dav0")]
+position = Vector2(0, 1)
+detection_range = 128
+obstacle_range = 8
