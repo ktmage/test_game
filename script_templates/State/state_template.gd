@@ -7,7 +7,7 @@ _TS_pass
 func _update(delta: float):
 _TS_pass
 	
-func _physics_process(delta: float):
+func _physics_update(delta: float):
 _TS_pass
 	
 func _exit():
