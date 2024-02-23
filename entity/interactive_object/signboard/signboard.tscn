@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://component/com_interact_area/com_interact_area.tscn" id="3_kw2li"]
 [ext_resource type="PackedScene" uid="uid://c6bx00phxjrgr" path="res://component/com_select_area/com_select_area.tscn" id="3_mn51y"]
 [ext_resource type="Script" path="res://component/com_state_machine/com_state_machine.gd" id="5_em7t1"]
-[ext_resource type="Script" path="res://component/com_state_machine/work_state.gd" id="6_ok1mi"]
-[ext_resource type="Script" path="res://component/com_state_machine/idle_state.gd" id="6_tptty"]
+[ext_resource type="Script" path="res://component/com_state_machine/interactable_state.gd" id="6_r5wjn"]
+[ext_resource type="Script" path="res://component/com_state_machine/non_interactable_state.gd" id="7_gchmr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gduh4"]
 size = Vector2(16, 16)
@@ -28,8 +28,7 @@ region_rect = Rect2(16, 16, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gduh4")
 
-[node name="com_interact_area" parent="." node_paths=PackedStringArray("com_selectable") instance=ExtResource("3_kw2li")]
-com_selectable = NodePath("../com_select_area")
+[node name="com_interact_area" parent="." instance=ExtResource("3_kw2li")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="com_interact_area"]
 shape = SubResource("CircleShape2D_bpqat")
@@ -43,12 +42,14 @@ shape = SubResource("RectangleShape2D_2jjvf")
 
 [node name="com_state_machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_em7t1")
-initial_state = NodePath("IdleState")
+initial_state = NodePath("InteractableState")
 
-[node name="IdleState" type="Node" parent="com_state_machine"]
-script = ExtResource("6_tptty")
+[node name="InteractableState" type="Node" parent="com_state_machine" node_paths=PackedStringArray("com_interact_area", "com_select_area")]
+script = ExtResource("6_r5wjn")
+com_interact_area = NodePath("../../com_interact_area")
+com_select_area = NodePath("../../com_select_area")
 
-[node name="WorkState" type="Node" parent="com_state_machine"]
-script = ExtResource("6_ok1mi")
+[node name="NonInteractableState" type="Node" parent="com_state_machine"]
+script = ExtResource("7_gchmr")
 
-[connection signal="interacted" from="com_interact_area" to="." method="_on_com_interactable_interacted"]
+[connection signal="interacted" from="com_state_machine/InteractableState" to="." method="_on_interactable_state_interacted"]
