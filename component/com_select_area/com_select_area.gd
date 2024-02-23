@@ -1,5 +1,5 @@
 extends Area2D
-class_name com_selectable
+class_name com_select_area;
 
 var is_selected: bool = false;
 var _material: ShaderMaterial;

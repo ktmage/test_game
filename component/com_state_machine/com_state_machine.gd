@@ -33,6 +33,10 @@ func _physics_process(delta):
 	if current_state:
 		current_state._physics_update(delta)
 
+func _input(event: InputEvent):
+	if current_state:
+		current_state._input_update(event)
+
 func _on_transitioned(state : State, new_state_name : String) -> void :
 	if state != current_state:
 		return;
