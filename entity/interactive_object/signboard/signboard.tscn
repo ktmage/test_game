@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk0rifobek3ie"]
+[gd_scene load_steps=11 format=3 uid="uid://dk0rifobek3ie"]
 
 [ext_resource type="Script" path="res://entity/interactive_object/signboard/signboard.gd" id="1_m3vut"]
 [ext_resource type="Texture2D" uid="uid://dbtnc4i5favep" path="res://map/tile_map_2_1.png" id="2_3de00"]
 [ext_resource type="PackedScene" uid="uid://csljf8ousc1q7" path="res://component/com_interact_area/com_interact_area.tscn" id="3_kw2li"]
 [ext_resource type="PackedScene" uid="uid://c6bx00phxjrgr" path="res://component/com_select_area/com_select_area.tscn" id="3_mn51y"]
+[ext_resource type="Script" path="res://component/com_state_machine/com_state_machine.gd" id="5_em7t1"]
+[ext_resource type="Script" path="res://component/com_state_machine/work_state.gd" id="6_ok1mi"]
+[ext_resource type="Script" path="res://component/com_state_machine/idle_state.gd" id="6_tptty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gduh4"]
 size = Vector2(16, 16)
@@ -37,5 +40,15 @@ sprite_2d = NodePath("../Sprite2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="com_select_area"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2jjvf")
+
+[node name="com_state_machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_em7t1")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="com_state_machine"]
+script = ExtResource("6_tptty")
+
+[node name="WorkState" type="Node" parent="com_state_machine"]
+script = ExtResource("6_ok1mi")
 
 [connection signal="interacted" from="com_interact_area" to="." method="_on_com_interactable_interacted"]
