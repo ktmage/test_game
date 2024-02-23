@@ -1,5 +1,5 @@
 extends Area2D
-class_name com_interactable
+class_name com_interact_area;
 
 @export var com_selectable: com_selectable;
 var is_entered: bool = false
