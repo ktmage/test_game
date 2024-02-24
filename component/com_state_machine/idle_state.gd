@@ -3,6 +3,8 @@ class_name IdleState
 
 var timer : Timer;
 
+signal transitioned;
+
 func _enter():
 	print_rich("[color=green][b]IdleState: Enter![/b][/color]")
 	print_rich("[color=green]IdleState: 10秒くらい休もうかな。[/color]")	

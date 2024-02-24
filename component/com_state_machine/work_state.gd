@@ -3,6 +3,8 @@ class_name WorkState
 
 var timer : Timer;
 
+signal transitioned;
+
 func _enter():
 	print_rich("[color=yellow][b]WorkState: Enter![/b][/color]")
 	print_rich("[color=yellow]WorkState: よし、やるぞ～！[/color]")	

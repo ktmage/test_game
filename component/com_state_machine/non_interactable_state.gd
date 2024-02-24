@@ -1,6 +1,8 @@
 extends State
 class_name NonInteractableState
 
+signal transitioned;
+
 func _enter():
 	pass
 	
