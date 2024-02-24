@@ -5,9 +5,7 @@ class_name State
 ## オブジェクトの状態はStateとして表現されます。
 ## Stateを継承したクラスによって状態を定義します。
 ## _enter(), _update(), _physics_update(), _exit(), transitionedシグナルを宣言しない場合はアサーションされます。
-
-## 遷移したいときにemitするシグナル
-signal transitioned(state : State, new_state_name : String)
+## また、Stateを継承したクラスは明示的にtransitionedというシグナルを宣言する必要があります。これはステートの遷移を行う場合に発行します。
 
 ## Stateに入る時に呼ばれるメソッド
 func _enter() -> void:
@@ -33,4 +31,3 @@ func _input_update(event: InputEvent) -> void:
 func _exit() -> void:
 	assert(false, "Class " + self.get_script().resource_path + " does not override method exit.")
 	return;
-

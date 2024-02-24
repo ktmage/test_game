@@ -5,6 +5,7 @@ class_name InteractableState
 @export var com_select_area: com_select_area;
 
 signal interacted
+signal transitioned
 
 func _enter():
 	pass

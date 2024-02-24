@@ -22,6 +22,7 @@ func _ready():
 	for child in get_children():
 		assert(child is State, "StateMachine can only have State as children.")
 		if child is State:
+			validate_transitioned_signal(child)
 			states[child.name] = child
 			child.transitioned.connect(_on_transitioned)
 
@@ -51,3 +52,8 @@ func _on_transitioned(state : State, new_state_name : String) -> void :
 	new_state._enter()
 		
 	current_state = new_state;
+
+# 基底クラス内で判定しようとするとオーバーライドされてしまう可能性があるのでここで検証する。
+## Stateがtransitionedシグナルを実装しているか検証するためのメソッド。
+func validate_transitioned_signal(state: State) -> void:
+	assert(state.has_signal("transitioned"), "Class " + self.get_script().resource_path + " does not override signal transitioned.")
