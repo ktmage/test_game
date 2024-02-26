@@ -1,16 +1,13 @@
 extends CharacterBody2D
 
-const SWORD = preload("res://entity/equipment/sword/sword.tscn")
 
 const speed: int = 64
-var equipment: Node2D
 var chara_vector : int #キャラの向きを0~3で記憶(上下左右)
 var chara_condition :String #キャラの状態を記憶
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$chara_texture/AnimationPlayer.play("down")
-	equip() #テスト用
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,11 +31,15 @@ func _physics_process(delta):
 	
 	#アニメーション制御
 	move_anim(chara_vector,chara_condition)
-	#装備品制御
-	equip_contorol(chara_condition, chara_vector)
+	
+	
+	
 
 	#なんかすごいやつ
 	move_and_slide()
+	
+	if chara_condition == "moving" or chara_condition == "idle":
+		$com_equipment_position.direction_chenge(chara_vector)
 	
 func vector_ctrl(_velocity):
 	if chara_condition != "action":
@@ -94,31 +95,16 @@ func move_anim(_chara_vector: int, _chara_condition: String):#アニメーショ
 	else:
 		pass
 	
-func equip():#剣を装備(暫定。あとから引数で他の武器も装備できるようにしたい)
-	print("equip!")
-	equipment = SWORD.instantiate()
-	add_child(equipment)
-	equip_contorol(chara_condition, chara_vector)
-	
-func equip_contorol(_chara_condition: String, _chara_vector: int):#向きに応じて武器の位地を調整する
-	if equipment == null:
-		pass
-	else: 
-		if  _chara_condition == "idle" or _chara_condition == "moving":
-			equipment.grip_control(_chara_vector)
 	
 func action():#武器を使う(?)
-	if equipment == null:
-		pass
-	else:
 		chara_condition = "action"
-		equipment.action_control(chara_vector)
+		$com_equipment_position.action(chara_vector)
 		var timer = get_tree().create_timer(0.5)
 		timer.connect("timeout", func(): chara_condition = "idle")
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		print("F")
+		print("click!")
 		action()
 
 
