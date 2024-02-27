@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg50tcj70kxga"]
+
+[ext_resource type="Texture2D" uid="uid://wgb6pbkvtbwn" path="res://entity/equipment/shield/shield2.png" id="1_a2dkv"]
+[ext_resource type="Script" path="res://entity/equipment/equipment.gd" id="2_shve3"]
+
+[node name="shield" type="Sprite2D"]
+position = Vector2(0, -2)
+texture = ExtResource("1_a2dkv")
+script = ExtResource("2_shve3")
+defense = 2

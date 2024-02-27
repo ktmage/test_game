@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7to6cf114d1x"]
+[gd_scene load_steps=8 format=3 uid="uid://c7to6cf114d1x"]
 
 [ext_resource type="Script" path="res://entity/player/player.gd" id="1_rghen"]
 [ext_resource type="PackedScene" uid="uid://cjktn4bhs12by" path="res://entity/player/chara_texture1.tscn" id="2_bq0up"]
 [ext_resource type="Script" path="res://component/com_status/com_status.gd" id="3_k78bq"]
 [ext_resource type="PackedScene" uid="uid://cqg2iojf2nmu8" path="res://component/com_equipment/com_equipment.tscn" id="4_lm53f"]
 [ext_resource type="PackedScene" uid="uid://2fdxwpd5tqdd" path="res://entity/equipment/sword/sword.tscn" id="5_qtvry"]
+[ext_resource type="PackedScene" uid="uid://bg50tcj70kxga" path="res://entity/equipment/shield/shield.tscn" id="6_2okyb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3f6q"]
 size = Vector2(10, 15)
@@ -29,7 +30,7 @@ script = ExtResource("3_k78bq")
 
 [node name="com_equipment" parent="." instance=ExtResource("4_lm53f")]
 inst_main_equipment = ExtResource("5_qtvry")
-inst_sub_equipment = ExtResource("5_qtvry")
+inst_sub_equipment = ExtResource("6_2okyb")
 grip_main_up = Vector2(5, 4)
 grip_main_down = Vector2(-5, 4)
 grip_main_left = Vector2(-2, 4)
