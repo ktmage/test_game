@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entity/player/player.gd" id="1_rghen"]
 [ext_resource type="PackedScene" uid="uid://cjktn4bhs12by" path="res://entity/player/chara_texture1.tscn" id="2_bq0up"]
 [ext_resource type="Script" path="res://component/com_status/com_status.gd" id="3_k78bq"]
-[ext_resource type="Script" path="res://component/com_equipment_position/com_equipment_position.gd" id="4_oqppm"]
+[ext_resource type="PackedScene" uid="uid://cqg2iojf2nmu8" path="res://component/com_equipment/com_equipment.tscn" id="4_lm53f"]
 [ext_resource type="PackedScene" uid="uid://2fdxwpd5tqdd" path="res://entity/equipment/sword/sword.tscn" id="5_qtvry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3f6q"]
@@ -22,19 +22,23 @@ zoom = Vector2(3, 3)
 
 [node name="chara_texture" parent="." instance=ExtResource("2_bq0up")]
 z_index = 2
-frame = 15
+frame = 13
 
 [node name="com_status" type="Node" parent="."]
 script = ExtResource("3_k78bq")
 
-[node name="com_equipment_position" type="Node2D" parent="."]
-script = ExtResource("4_oqppm")
-inst_equipment = ExtResource("5_qtvry")
-grip_pos_up = Vector2(5, 4)
-grip_pos_down = Vector2(-5, 4)
-grip_pos_left = Vector2(-2, 3)
-grip_pos_right = Vector2(2, 3)
-action_pos_up = Vector2(5, 1)
-action_pos_down = Vector2(-5, 1)
-action_pos_left = Vector2(-4, 1)
-action_pos_right = Vector2(4, 1)
+[node name="com_equipment" parent="." instance=ExtResource("4_lm53f")]
+inst_main_equipment = ExtResource("5_qtvry")
+inst_sub_equipment = ExtResource("5_qtvry")
+grip_main_up = Vector2(5, 4)
+grip_main_down = Vector2(-5, 4)
+grip_main_left = Vector2(-2, 4)
+grip_main_right = Vector2(2, 4)
+action_grip_up = Vector2(5, 1)
+action_grip_down = Vector2(-5, 1)
+action_grip_left = Vector2(-4, 2)
+action_grip_right = Vector2(4, 2)
+grip_sub_up = Vector2(-5, 4)
+grip_sub_down = Vector2(5, 4)
+grip_sub_left = Vector2(-2, 4)
+grip_sub_right = Vector2(2, 4)

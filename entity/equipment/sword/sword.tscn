@@ -7,4 +7,3 @@
 position = Vector2(0, -4)
 texture = ExtResource("2_mbtkh")
 script = ExtResource("1_7nkmo")
-grip_pos = Vector2(0, -4)

@@ -39,7 +39,8 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if chara_condition == "moving" or chara_condition == "idle":
-		$com_equipment_position.direction_chenge(chara_vector)
+		$com_equipment.direction_chenge(chara_vector)
+		pass
 	
 func vector_ctrl(_velocity):
 	if chara_condition != "action":
@@ -98,7 +99,7 @@ func move_anim(_chara_vector: int, _chara_condition: String):#アニメーショ
 	
 func action():#武器を使う(?)
 		chara_condition = "action"
-		$com_equipment_position.action(chara_vector)
+		$com_equipment.action(chara_vector)
 		var timer = get_tree().create_timer(0.5)
 		timer.connect("timeout", func(): chara_condition = "idle")
 
